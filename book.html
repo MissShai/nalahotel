@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel Booking - Nala Drive Inn</title>
+
+    <!-- This is for booking design -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1f1f1f;
+            color: #f5f5f5;
+            margin: 0;
+        }
+
+        header {
+            background: #2c2c2c;
+            color: #f5f5f5;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700; /* Gold color on hover */
+        }
+
+        .booking-container {
+            background: #292929;
+            max-width: 550px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            margin: 40px auto; /* Center the booking container */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #e0dfd5; /* Gold color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 6px;
+            margin-top: 18px;
+            color: #ccc;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background-color: #1f1f1f;
+            color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #5a5953; /* Gold color on focus */
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            background-color: #292929;
+        }
+
+        .error-message {
+            color: #bb0000;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+
+        button {
+            margin-top: 30px;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background: #333; /* Darker shade on hover */
+        }
+
+        .success-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .booking-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<!-- this is for navigation throughout the website -->
+<body>
+    <header>
+        <div class="logo">Nala Drive Inn</div>
+        <nav class="nav-links">
+            <a href="about.html">About Us</a>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="book.html">Book</a>
+        </nav>
+    </header>
+<!-- this is for the informations for booking -->
+    <div class="booking-container">
+        <h1>Book Your Stay</h1>
+        <form id="bookingForm" novalidate>
+            <label for="name">Full Name<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+            <div class="error-message" id="nameError"></div>
+
+            <label for="email">Email<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+            <div class="error-message" id="emailError"></div>
+
+            <label for="phone">Phone Number<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +1 555 123 4567" required pattern="[\d\s\+\-]+" />
+            <div class="error-message" id="phoneError"></div>
+
+            <label for="checkin">Check-in Date<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <input type="date" id="checkin" name="checkin" required />
+            <div class="error-message" id="checkinError"></div>
+
+            <label for="checkout">Check-out Date<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <input type="date" id="checkout" name="checkout" required />
+            <div class="error-message" id="checkoutError"></div>
+
+            <label for="guests">Number of Guests<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <select id="guests" name="guests" required>
+                <option value="">Select number of guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+            </select>
+            <div class="error-message" id="guestsError"></div>
+
+            <label for="room">Room Type<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+            <select id="room" name="room" required>
+                <option value="">Select room type</option>
+                <option value="standard">Standard Room</option>
+                <option value="deluxe">Presidential Suite</option>
+                <option value="triple">Triple Room</option>
+                <option value="single">Single Room</option>
+                <option value="deluxe">Deluxe Room</option>
+                <option value="twin">Twin Room</option>
+            </select>
+            <div class="error-message" id="roomError"></div>
+
+            <button type="submit">Book Now</button>
+            <div class="success-message" id="successMessage" style="display:none;">Thank you! Your booking request has been submitted.</div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const checkinInput = document.getElementById('checkin');
+        const checkoutInput = document.getElementById('checkout');
+        const guestsInput = document.getElementById('guests');
+        const roomInput = document.getElementById('room');
+
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const checkinError = document.getElementById('checkinError');
+        const checkoutError = document.getElementById('checkoutError');
+        const guestsError = document.getElementById('guestsError');
+        const roomError = document.getElementById('roomError');
+        const successMessage = document.getElementById('successMessage');
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let valid = true;
+
+            // This is to clear errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            checkinError.textContent = '';
+            checkoutError.textContent = '';
+            guestsError.textContent = '';
+            roomError.textContent = '';
+            successMessage.style.display = 'none';
+
+            // This is for Name validation
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Please enter your full name.';
+                valid = false;
+            }
+
+            // This is for Email validation
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Please enter your email.';
+                valid = false;
+            } else if (!validateEmail(emailInput.value.trim())) {
+                emailError.textContent = 'Please enter a valid email address.';
+                valid = false;
+            }
+
+            // This is for Phone validation
+            const phoneVal = phoneInput.value.trim();
+            const phonePattern = /^[\d\s+\-()]+$/;
+            if (phoneVal === '') {
+                phoneError.textContent = 'Please enter your phone number.';
+                valid = false;
+            } else if (!phonePattern.test(phoneVal)) {
+                phoneError.textContent = 'Please enter a valid phone number.';
+                valid = false;
+            }
+
+            // This is for Check-in date validation
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            let checkinDate = new Date(checkinInput.value);
+            let checkoutDate = new Date(checkoutInput.value);
+
+            if (!checkinInput.value) {
+                checkinError.textContent = 'Please select a check-in date.';
+                valid = false;
+            } else if (checkinDate < today) {
+                checkinError.textContent = 'Check-in date cannot be in the past.';
+                valid = false;
+            }
+
+            // This is for Check-out date validation
+            if (!checkoutInput.value) {
+                checkoutError.textContent = 'Please select a check-out date.';
+                valid = false;
+            } else if (checkoutDate <= checkinDate) {
+                checkoutError.textContent = 'Check-out date must be after check-in date.';
+                valid = false;
+            }
+
+            // This is for Guests validation
+            if (!guestsInput.value) {
+                guestsError.textContent = 'Please select number of guests.';
+                valid = false;
+            }
+
+            // This is for Room validation
+            if (!roomInput.value) {
+                roomError.textContent = 'Please select a room type.';
+                valid = false;
+            }
+
+            if (valid) {
+                // This is Normally submit form data to server
+                successMessage.style.display = 'block';
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>

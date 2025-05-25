@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>faqs</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #e0e0e0; /* Light gray background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .section__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .section__header {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #555; /* Darker gray for header */
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .client__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .client__card {
+      background-color: #fff; /* White background for cards */
+      border: 1px solid #ccc; /* Light gray border */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .client__card:hover {
+      transform: translateY(-5px);
+    }
+    .client__card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .client__card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #666; /* Medium gray for text */
+    }
+    nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.7);
+    z-index: 999;
+    font-family: 'Montserrat', sans-serif;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    height: 55px;
+    align-items: center;
+  }
+  nav ul li {
+    font-size: 1.1rem;
+  }
+  nav ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 12px;
+    display: inline-block;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  nav ul li a:hover {
+    color: #e0e0e0;
+    border-bottom: 3px solid #bbb;
+  }
+  nav ul li a.active {
+    color: #e0e0e0;
+    border-bottom: 3px solid #e0e0e0;
+  }
+  </style>
+</head>
+<body>
+    <nav role="navigation" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="book.html" title="Book">Book</a></li>
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="faqs.html" class="active" aria-current="page" title="About Us">faqs</a></li>
+          <li><a href="contact.html" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
+
+  <section class="client">
+    <div class="section__container client__container">
+      <h2 class="section__header">Frequently asked questions</h2>
+      <div class="client__grid">
+        <div class="client__card">
+          <p>
+            <b>Q:</b> What time is check-in and check-out at the hotel? <br>
+ <b>A:</b> Check-in is from 3:00 PM, and check-out is by 11:00 AM.
+ Early check-in and late check-out may be available upon request, subject to availability.
+          </p>
+        </div>
+        <div class="client__card">
+            <p>
+                <b>Q:</b>  Do you offer free Wi-Fi? <br>
+     <b>A:</b> Yes, we offer complimentary high-speed Wi-Fi throughout the hotel, including guest rooms, the lobby, and common areas.
+              </p>
+        </div>
+        <div class="client__card">
+            <p>
+                <b>Q:</b>  Is parking available at the hotel? <br>
+     <b>A:</b> Yes, we provide secure on-site parking for our guests. Parking is free for registered guests.
+              </p>
+        </div>
+        <div class="client__card">
+            <p>
+                <b>Q:</b> Are pets allowed at the hotel? <br>
+     <b>A:</b> We are a pet-friendly hotel! Please let us know in advance if you’re bringing a pet. A small additional fee may apply.
+              </p>
+        </div>
+        <div class="client__card">
+            <p>
+                <b>Q:</b> Do you have on-site dining options?<br>
+     <b>A:</b>  Yes, we have an on-site restaurant serving breakfast, lunch, and dinner daily. Room service is also available during select hours.
+              </p>
+        </div>
+        <div class="client__card">
+            <p>
+                <b>Q:</b>  Is your hotel accessible for guests with disabilities? <br>
+     <b>A:</b> Absolutely. Our hotel is fully accessible and offers ADA-compliant rooms, elevators, and facilities to accommodate all guests comfortably.
+
+
+              </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

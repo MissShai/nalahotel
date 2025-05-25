@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us</title>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #1f1f1f;
+    margin: 0;
+    color: #f5f5f5;
+  }
+
+  header {
+    background: #2c2c2c;
+    color: #f5f5f5;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #52514b; /* Gold color on hover */
+  }
+
+  .contact-container {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 40px 30px;
+    margin: 60px auto; /* Center the contact container */
+    background: #292929;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #cfcdc2; /* Gold color for heading */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-top: 18px;
+    color: #ccc;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 12px 15px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #4b4a48; /* Gold color on focus */
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    background-color: #2c2c2c;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .error-message {
+    color: #bb0000;
+    font-size: 0.9em;
+    margin-top: 4px;
+  }
+
+  button {
+    margin-top: 30px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  button:hover {
+    background: #333; /* Darker shade on hover */
+  }
+
+  .success-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  @media (max-width: 550px) {
+    .contact-container {
+      padding: 30px 20px;
+    }
+  }
+</style>
+</head>
+
+<!-- This is for navigation throughout the website -->
+<body>
+  <header>
+    <div class="logo">Luxura Hotel</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" novalidate>
+      <label for="name">Name<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      <div class="error-message" id="nameError"></div>
+
+      <label for="email">Email<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+      <div class="error-message" id="emailError"></div>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject (optional)" />
+
+      <label for="message">Message<span class="required" aria-hidden="true" style="color:#bb0000;">*</span></label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+      <div class="error-message" id="messageError"></div>
+
+      <button type="submit">Send Message</button>
+      <div class="success-message" id="successMessage" style="display:none;">Thank you! Your message has been sent.</div>
+    </form>
+  </div>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const subjectInput = document.getElementById('subject');
+  const messageInput = document.getElementById('message');
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+  const successMessage = document.getElementById('successMessage');
+
+  function validateEmail(email) {
+    // Simple email regex
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let valid = true;
+
+    // Clear previous errors
+    nameError.textContent = '';
+    emailError.textContent = '';
+    messageError.textContent = '';
+    successMessage.style.display = 'none';
+
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Please enter your name.';
+      valid = false;
+    }
+    if (emailInput.value.trim() === '') {
+      emailError.textContent = 'Please enter your email.';
+      valid = false;
+    } else if (!validateEmail(emailInput.value.trim())) {
+      emailError.textContent = 'Please enter a valid email address.';
+      valid = false;
+    }
+    if (messageInput.value.trim() === '') {
+      messageError.textContent = 'Please enter your message.';
+      valid = false;
+    }
+
+    if (valid) {
+      // Normally, here you would send the form data to a server.
+      // For this demo, just show the success message and clear fields.
+      successMessage.style.display = 'block';
+
+      form.reset();
+    }
+  });
+</script>
+</body>
+</html>

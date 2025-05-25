@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Us</title>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<style>
+  /* Google font for luxury style */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap');
+
+  body {
+    margin: 0;
+    background: #1f1f1f;
+    color: #ccc;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.7);
+    z-index: 999;
+    font-family: 'Montserrat', sans-serif;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    height: 55px;
+    align-items: center;
+  }
+  nav ul li {
+    font-size: 1.1rem;
+  }
+  nav ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 12px;
+    display: inline-block;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  nav ul li a:hover {
+    color: #e0e0e0;
+    border-bottom: 3px solid #bbb;
+  }
+  nav ul li a.active {
+    color: #e0e0e0;
+    border-bottom: 3px solid #e0e0e0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 100px auto 50px; /* push content down to below nav */
+    background: #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.6);
+    padding: 40px 50px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+    text-shadow: 0 0 10px #888, 0 0 20px #666;
+  }
+
+  p.description {
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    color: #d6d6d6;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #888;
+    padding-bottom: 8px;
+    color: #dcdcdc;
+  }
+
+  .info {
+    font-size: 1.1rem;
+    color: #d6d6d6;
+    margin-bottom: 40px;
+  }
+
+  .info i {
+    color: #bbb;
+    margin-right: 10px;
+  }
+
+  .amenities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 25px;
+  }
+
+  .amenity {
+    background: #383838;
+    border-radius: 12px;
+    padding: 18px 15px;
+    box-shadow: 0 0 8px rgba(128, 128, 128, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+
+  .amenity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #bbb;
+  }
+
+  .amenity i {
+    font-size: 2.5rem;
+    color: #bbb;
+    margin-bottom: 12px;
+  }
+
+  .amenity span {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ddd;
+  }
+
+  .amenity small {
+    color: #bbb;
+  }
+
+  /* Responsive */
+  @media(max-width: 520px) {
+    nav ul {
+      gap: 20px;
+      padding: 0 15px;
+      font-size: 1rem;
+    }
+    .container {
+      padding: 25px 20px;
+      margin: 90px 10px 40px;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+</style>
+</head>
+<!-- This is for navigation throughout the website -->
+<body>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <ul>
+      <li><a href="book.html" title="Book">Book</a></li>
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li><a href="about.html" class="active" aria-current="page" title="About Us">About Us</a></li>
+      <li><a href="contact.html" title="Contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- This is for informations -->
+  <div class="container" role="main">
+    <h1>About Us</h1>
+
+    <p class="description">
+      This low-key hotel is 4 km from the Hizon-Singian House, dating from 1870, and 6 km from the Baroque San Guillermo Parish Church.<br /><br />
+      The understated rooms feature flat-screen TVs and free Wi-Fi, plus minifridges, and tea and coffeemakers. Room service is offered.<br /><br />
+      Complimentary perks include breakfast and parking. There's a casual international restaurant and a bar, as well as a lounge in the lobby.
+    </p>
+
+    <section aria-labelledby="address-contact">
+      <h2 id="address-contact" class="section-title">Address &amp; Contact Information</h2>
+      <div class="info">
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 2MQJ+P2C, San Fernando, Pampanga</p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> (075) 986 2378</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="popular-amenities">
+      <h2 id="popular-amenities" class="section-title">Popular Amenities</h2>
+      <div class="amenities" role="list">
+        <div class="amenity" role="listitem" title="Parking - free">
+          <i class="fas fa-square-parking" aria-hidden="true"></i>
+          <span>Parking</span>
+          <small>Free</small>
+        </div>
+        <div class="amenity" role="listitem" title="Wi-Fi - free">
+          <i class="fas fa-wifi" aria-hidden="true"></i>
+          <span>Wi-Fi</span>
+          <small>Free</small>
+        </div>
+        <div class="amenity" role="listitem" title="Air Conditioning">
+          <i class="fas fa-snowflake" aria-hidden="true"></i>
+          <span>Air Conditioning</span>
+        </div>
+        <div class="amenity" role="listitem" title="Breakfast Included">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          <span>Breakfast</span>
+        </div>
+        <div class="amenity" role="listitem" title="Front Desk 24 Hour">
+          <i class="fas fa-concierge-bell" aria-hidden="true"></i>
+          <span>Front Desk 24h</span>
+        </div>
+        <div class="amenity" role="listitem" title="Full-service Laundry">
+          <i class="fas fa-tshirt" aria-hidden="true"></i>
+          <span>Laundry</span>
+        </div>
+        <div class="amenity" role="listitem" title="Kid-friendly">
+          <i class="fas fa-child" aria-hidden="true"></i>
+          <span>Kid-friendly</span>
+        </div>
+        <div class="amenity" role="listitem" title="Airport Shuttle (extra charge)">
+          <i class="fas fa-shuttle-van" aria-hidden="true"></i>
+          <span>Airport Shuttle</span>
+          <small>Extra charge</small>
+        </div>
+        <div class="amenity" role="listitem" title="Room Service">
+          <i class="fas fa-room-service" aria-hidden="true"></i>
+          <span>Room Service</span>
+        </div>
+        <div class="amenity" role="listitem" title="Restaurant">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          <span>Restaurant</span>
+        </div>
+        <div class="amenity" role="listitem" title="Buffet Dinner">
+          <i class="fas fa-bread-slice" aria-hidden="true"></i>
+          <span>Buffet Dinner</span>
+        </div>
+        <div class="amenity" role="listitem" title="Breakfast Buffet">
+          <i class="fas fa-egg" aria-hidden="true"></i>
+          <span>Breakfast Buffet</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
